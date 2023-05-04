@@ -12,10 +12,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: |
-        sudo apt-get install -y make
-        make init
     - name: Download Data
       run: make data
 

@@ -1,24 +1,31 @@
-	# Define variables
-	PROJECT_NAME = iris_classification
-	PYTHON_INTERPRETER = python3
-	
-	# Define targets
-	.PHONY: data
-	data:
-	$(PYTHON_INTERPRETER) data_download.py
-	
-	.PHONY: features
-	features:
-	$(PYTHON_INTERPRETER) feature_engineering.py
-	
-	.PHONY: train
-	train:
-	$(PYTHON_INTERPRETER) model_training.py
-	
-	.PHONY: evaluate
-	evaluate:
-	$(PYTHON_INTERPRETER) model_evaluation.py
-	
-	.PHONY: deploy
-	deploy:
-	$(PYTHON_INTERPRETER) app.py
+# Install dependencies
+install:
+    pip install -r requirements.txt
+
+# Download data
+download_data:
+    python download_data.py
+
+# Generate features
+features:
+    python feature_engineering.py
+
+# Train the model
+train:
+    python model_training.py
+
+# Evaluate the model
+evaluate:
+    python model_evaluation.py
+
+# Deploy the model
+deploy:
+    python deploy_model.py
+
+# Clean up intermediate files
+clean:
+    rm -rf data/processed/
+    rm -rf models/
+
+# Run all steps
+all: install download_data features train evaluate deploy

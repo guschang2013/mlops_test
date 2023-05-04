@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+
 model_path = "models/iris_model.pkl"
 with open(model_path, "rb") as f:
     model = pickle.load(f)

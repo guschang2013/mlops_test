@@ -12,5 +12,13 @@ with open(model_path, "rb") as f:
 def predict():
     data = request.json["data"]
     features = [[data["sepal_length"], data["sepal_width"], data["petal_length"], data["petal_width"]]]
+    prediction = model.predict(features)[0]
+    response = {"class": prediction}
+    return jsonify(response)
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    data = request.json["data"]
+    features = [[data["sepal_length"], data["sepal_width"], data["petal_length"], data["petal_width"]]]
     prediction = model.predict(features)
-   
+    return jsonify({"prediction": prediction.tolist()})

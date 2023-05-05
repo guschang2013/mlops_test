@@ -23,6 +23,10 @@ evaluate:
 deploy:
 	python app.py
 
+# Test the model
+test:
+	python test.py
+
 # Clean up intermediate files
 clean:
 	rm -rf data/processed/

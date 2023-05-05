@@ -33,4 +33,4 @@ clean:
 	rm -rf models/
 
 # Run all steps
-all: install download_data features train evaluate deploy
+all: install download_data features train evaluate deploy test

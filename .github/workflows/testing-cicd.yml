@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Download Data
-      run: make data
+      run: make download_data
 
     - name: Engineer Features
       run: make features

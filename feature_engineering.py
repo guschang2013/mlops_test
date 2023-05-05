@@ -15,5 +15,8 @@ features = data.drop(columns=["class"])
 scaler = StandardScaler()
 scaled_features = scaler.fit_transform(features)
 
+if not os.path.exists(os.path.dirname(output_path)):
+    os.makedirs(os.path.dirname(output_path))
+    
 # Save the features
 pd.DataFrame(scaled_features).to_csv(output_path, index=False)

@@ -9,7 +9,13 @@ output_path = "features/iris_features.csv"
 data = pd.read_csv(data_path, header=None)
 data.columns = ["sepal_length", "sepal_width", "petal_length", "petal_width", "class"]
 
-# Perform feature engineering
+# Define a dictionary to map class names to integers
+class_map = {"Iris-setosa": 0, "Iris-versicolor": 1, "Iris-virginica": 2}
+
+# Replace class names with integer values
+data["class"] = data["class"].map(class_map)
+
+# Get the features
 features = data.drop(columns=["class"])
 
 # Scale the features

@@ -9,7 +9,7 @@ with open(model_path, "rb") as f:
     model = pickle.load(f)
 
 @app.route("/", methods=["POST"])
-def predict():
+def predict1():
     data = request.json["data"]
     features = [[data["sepal_length"], data["sepal_width"], data["petal_length"], data["petal_width"]]]
     prediction = model.predict(features)[0]

@@ -1,5 +1,6 @@
 import pandas as pd
 import xgboost as xgb
+import pickle
 
 features_path = "features/iris_features.csv"
 target_path = "data/iris.csv"

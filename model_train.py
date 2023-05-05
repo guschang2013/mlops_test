@@ -13,5 +13,8 @@ target = pd.read_csv(target_path, header=None)[4]
 model = xgb.XGBClassifier()
 model.fit(features, target)
 
+if not os.path.exists(os.path.dirname(output_path)):
+    os.makedirs(os.path.dirname(output_path))
+    
 # Save the model
 xgb.save_model(output_path, model)

@@ -13,7 +13,7 @@ features:
 
 # Train the model
 train:
-	python model_training.py
+	python model_train.py
 
 # Evaluate the model
 evaluate:

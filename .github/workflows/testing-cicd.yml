@@ -29,3 +29,6 @@ jobs:
 
     - name: Deploy Model
       run: make deploy
+
+    - name: Test Model
+      run: make test

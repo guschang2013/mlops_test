@@ -11,9 +11,9 @@ features = pd.read_csv(features_path)
 target = pd.read_csv(target_path, header=None)[4]
 
 # load the model
-with open(model_path, 'rb') as f:
+with open(model_path, "rb") as f:
     model = pickle.load(f)
-#model = xgb.Booster(model_file=model_path)
+# model = xgb.Booster(model_file=model_path)
 
 # Evaluate the model
 predictions = model.predict(features)

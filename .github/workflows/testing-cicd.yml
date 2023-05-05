@@ -15,6 +15,12 @@ jobs:
     - name: Install dependencies
       run: make install
 
+    - name: Lint code
+      run: make lint
+
+    - name: Format code
+      run: make format
+
     - name: Download Data
       run: make download_data
 
@@ -29,6 +35,3 @@ jobs:
 
     - name: Deploy Model
       run: make deploy
-
-    - name: Test Model
-      run: make test

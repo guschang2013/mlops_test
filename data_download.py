@@ -10,5 +10,5 @@ if not os.path.exists(os.path.dirname(output_path)):
 response = requests.get(url)
 response.raise_for_status()
 
-with open(output_path, 'wb') as f:
+with open(output_path, "wb") as f:
     f.write(response.content)

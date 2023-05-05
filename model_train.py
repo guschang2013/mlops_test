@@ -23,6 +23,6 @@ if not os.path.exists(os.path.dirname(output_path)):
     os.makedirs(os.path.dirname(output_path))
 
 # Save the model
-#xgb.save_model(output_path, model)
-with open(output_path, 'wb') as f:
+# xgb.save_model(output_path, model)
+with open(output_path, "wb") as f:
     pickle.dump(model, f)

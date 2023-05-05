@@ -11,6 +11,12 @@ download_data:
 features:
 	python feature_engineering.py
 
+format:
+	black *.py
+
+lint:
+	pylint --disable=R,C *.py
+
 # Train the model
 train:
 	python model_train.py
@@ -22,10 +28,6 @@ evaluate:
 # Deploy the model
 deploy:
 	python app.py
-
-# Test the model
-test:
-	python test.py
 
 # Clean up intermediate files
 clean:

@@ -5,7 +5,7 @@ install:
 
 # Download data
 download_data:
-	python download_data.py
+	python data_download.py
 
 # Generate features
 features:

@@ -21,7 +21,7 @@ evaluate:
 
 # Deploy the model
 deploy:
-	python deploy_model.py
+	python app.py
 
 # Clean up intermediate files
 clean:

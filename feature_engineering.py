@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import os
 
 data_path = "data/iris.csv"
 output_path = "features/iris_features.csv"

@@ -17,4 +17,6 @@ with open(model_path, "rb") as f:
 # Evaluate the model
 predictions = model.predict(features)
 accuracy = (predictions == target).sum() / len(target)
+print("Longitud: ", len(target))
+print("Longitud: ", len(target))
 print("Accuracy:", accuracy)
